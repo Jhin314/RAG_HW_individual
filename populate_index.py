@@ -8,15 +8,15 @@ from openai import OpenAI
 load_dotenv()
 
 
-#Better version of the ingestion code in main.py
+#Better version of the ingestion code in the now removed main.py
 
 # Configuration
 CSV_PATH = "medium-english-50mb.csv"
-INDEX_NAME = "rag-index04"
+INDEX_NAME = "rag-index03" #Name of latest index used (Developer's note: indexes 1 and 2 were used for debugging before scaling)
 EMBEDDING_MODEL = "4UHRUIN-text-embedding-3-small"
-TESTING_MODE = False # Start with a small subset to save budget
+TESTING_MODE = False # Start with a small subset to save budget. Since we don't need to do so anymore we set to False.
 
-CHUNK_BATCH_UPLOAD_SIZE = 100
+CHUNK_BATCH_UPLOAD_SIZE = 50
 #Number of chunks to collect before processing with APIs.
 #Developer's note: I started small for debugging purposes, and then scaled as needed.
 #The higher it is, the less requests we need to make to the APIs overall.
