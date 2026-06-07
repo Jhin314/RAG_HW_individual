@@ -1,10 +1,10 @@
-# Secrets — never commit these
+# Obviously env was used to ocontain API keys so we ignore those
 .env
 .env_*
 .env.*
 !.env.example
 
-# Python
+# Python files and folders
 __pycache__/
 *.py[cod]
 .venv/
