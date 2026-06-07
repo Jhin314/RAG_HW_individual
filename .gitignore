@@ -1,0 +1,17 @@
+# Secrets — never commit these
+.env
+.env_*
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# IDE
+.idea/
+
+# Dataset (not needed for deployment; used only for local ingestion)
+*.csv

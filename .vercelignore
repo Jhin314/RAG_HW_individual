@@ -1,0 +1,10 @@
+# Keep the serverless function small — exclude ingestion + local-only files
+*.csv
+main.py
+ingest_opt.py
+prompt_test.py
+.venv/
+.idea/
+__pycache__/
+.env
+.env.*
