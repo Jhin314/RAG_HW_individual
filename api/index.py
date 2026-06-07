@@ -1,5 +1,4 @@
 import os
-
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from pydantic import BaseModel
@@ -10,17 +9,9 @@ load_dotenv()
 
 app = FastAPI()
 
-# 1. Initialize Pinecone Client
+# Initialize Pinecone Client
 pc = Pinecone(api_key=os.environ.get("PINECONE_API_KEY"))
-# Updated to point to your new correctly dimensioned index!
 index = pc.Index("rag-index03")
-
-# 2. Initialize LLMod.ai Client
-#client = OpenAI(
-#    api_key=os.environ.get("LLMOD_API_KEY"),
-#    base_url=os.environ.get("LLMOD_BASE_URL"),
-#    timeout=60 #TODO correct ?
-#)
 
 # Models & Config
 EMBEDDING_MODEL = "4UHRUIN-text-embedding-3-small"
@@ -70,7 +61,7 @@ def query_rag(request: QueryRequest):
 
     print("[DEBUG] index.py: Embedding done")
 
-    # Using.embedding to safely unpack the list, just like in the ingestion script
+    # Using.embedding to safely unpack the list
     query_vector = embed_response.data[0].embedding
 
     # 2. Retrieve from Pinecone
