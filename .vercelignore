@@ -1,4 +1,4 @@
-# Keep the serverless function small — exclude ingestion + local-only files
+# We want to keep the serverless function small, i.e exclude ingestion + local-only files
 *.csv
 main.py
 ingest_opt.py
